@@ -12,7 +12,18 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$CountryStatistic-primary: mat.define-palette($custom-brand-primary);
+$CountryStatistic-primary: mat.define-palette(
+  $custom-brand-primary,
+  50,
+  50,
+  50
+);
+$CountryStatistic-Dark: mat.define-palette(
+  $custom-brand-primary,
+  100,
+  100,
+  100
+);
 //$CountryStatistic-primary:#6E38F7
 $CountryStatistic-accent: mat.define-palette(
   mat.$pink-palette,
@@ -35,11 +46,20 @@ $CountryStatistic-theme: mat.define-light-theme(
     ),
   )
 );
+$CountryStatistic-darkTheme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $CountryStatistic-Dark,
+      accent: $CountryStatistic-accent,
+      warn: $CountryStatistic-warn,
+    ),
+  )
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($CountryStatistic-theme);
+// @include mat.all-component-themes($CountryStatistic-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -50,4 +70,18 @@ body {
 body {
   margin: 0;
   font-family: "Roboto Condensed", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+
+  &:hover {
+    color: $custom-primary;
+  }
+}
+
+.darkTheme {
+  @include mat.all-component-themes($CountryStatistic-darkTheme);
+  background-color: rgb(65, 65, 65);
 }
