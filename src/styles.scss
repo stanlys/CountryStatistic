@@ -14,9 +14,9 @@
 // hue. Available color palettes: https://material.io/design/color/
 $CountryStatistic-primary: mat.define-palette(
   $custom-brand-primary,
-  50,
-  50,
-  50
+  500,
+  500,
+  500
 );
 $CountryStatistic-Dark: mat.define-palette(
   $custom-brand-primary,
@@ -84,4 +84,9 @@ a {
 .darkTheme {
   @include mat.all-component-themes($CountryStatistic-darkTheme);
   background-color: rgb(65, 65, 65);
+}
+
+.lightTheme {
+  @include mat.all-component-themes($CountryStatistic-theme);
+  background-color: rgb(245, 245, 245);
 }

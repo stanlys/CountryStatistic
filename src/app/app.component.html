@@ -10,7 +10,11 @@
     <img alt="world is mine" src="./../assets/world/world.svg" />
   </main>
   <footer color="primary">
-    <span> </span>
+    <input [(ngModel)]="countryCode"/>
+    <span *ngIf="countryCode != ''">
+      <img [src]="imgUrl" width="75" [alt]="countryCode" />
+      
+    </span>
     <span class="flexSpaceBetween">
       <a href="#"> stanlys </a>
       <img alt="Github" src="./../assets/world/github.png" />
