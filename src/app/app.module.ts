@@ -9,9 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckGameComponent } from './core/components/check-game/check-game.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    CheckGameComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
