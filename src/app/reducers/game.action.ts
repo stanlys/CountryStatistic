@@ -7,11 +7,13 @@ import {
   on,
   props,
 } from '@ngrx/store';
-import { Action } from 'rxjs/internal/scheduler/Action';
 
 export const GAME_KEY = 'game';
 
-export const changeGame = createAction('[Game Component] Change');
+export const changeGame = createAction(
+  '[Game Component] Change',
+  props<{ countries: ICountry[]; region: string }>()
+);
 
 export const setUser = createAction(
   '[Game Component] SetUserName',
@@ -36,7 +38,16 @@ export const INITIAL_STATE: IGame = {
 
 export const gameReducer = createReducer(
   INITIAL_STATE,
-  on(setUser, (state, action) => ({ ...state, user: action.user }))
+  on(setUser, (state, action) => ({ ...state, user: action.user })),
+  on(changeGame, (state, action) => {
+    const _countries = action.countries;
+    const _region = action.region;
+    if (_region === 'Все страны') return { ...state, regions: _countries };
+    return {
+      ...state,
+      regions: _countries.filter((country) => country.region === _region),
+    };
+  })
 );
 
 export const featureSelector = createFeatureSelector<IGame>(GAME_KEY);
@@ -44,4 +55,9 @@ export const featureSelector = createFeatureSelector<IGame>(GAME_KEY);
 export const userNameSelector = createSelector(
   featureSelector,
   (state) => state.user
+);
+
+export const countriesSelector = createSelector(
+  featureSelector,
+  (state) => state.regions
 );

@@ -1,1 +1,8 @@
-<p>flag-games works!</p>
+<div>
+  <h3>Countries:</h3>
+  <ul>
+    <li *ngFor="let country of country$ | async">
+      {{ country.flag }}
+    </li>
+  </ul>
+</div>

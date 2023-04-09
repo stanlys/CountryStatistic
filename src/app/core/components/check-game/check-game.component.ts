@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ICountry } from '@core/interface/flag.interface';
 import CountryService from '@core/services/country.service';
 import { Store } from '@ngrx/store';
-import { setUser } from 'src/app/reducers/game.action';
+import { changeGame, setUser } from 'src/app/reducers/game.action';
 
 @Component({
   selector: 'app-check-game',
@@ -30,6 +30,13 @@ export class CheckGameComponent implements OnInit {
 
   currentGame() {
     this.store.dispatch(setUser({ user: this.userName }));
-    console.log(this.region);
+    this.store.dispatch(
+      changeGame({
+        region: this.region,
+        countries: this.countiesServices.allCountries,
+      })
+    );
+    this.route.navigate(['flag-game']);
+    // console.log(this.region);
   }
 }
