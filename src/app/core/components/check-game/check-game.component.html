@@ -1,6 +1,10 @@
 <div class="selectGame">
+  <mat-form-field>
+    <mat-label>Как тебя зовут? </mat-label>
+    <input matInput placeholder="Степан" [(ngModel)]="userName" />
+  </mat-form-field>
   <h2>Выбирай игру</h2>
-  <hr />
+  <mat-divider></mat-divider>
   <mat-radio-group [(ngModel)]="region">
     <mat-radio-button
       color="primary"

@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ICountry } from '@core/interface/flag.interface';
 import CountryService from '@core/services/country.service';
+import { Store } from '@ngrx/store';
+import { setUser } from 'src/app/reducers/game.action';
 
 @Component({
   selector: 'app-check-game',
@@ -13,7 +15,13 @@ export class CheckGameComponent implements OnInit {
 
   region = '';
 
-  constructor(private route: Router, public countiesServices: CountryService) {}
+  userName = '';
+
+  constructor(
+    private route: Router,
+    public countiesServices: CountryService,
+    private store: Store
+  ) {}
 
   ngOnInit(): void {
     this.countiesServices.getAllCountries();
@@ -21,6 +29,7 @@ export class CheckGameComponent implements OnInit {
   }
 
   currentGame() {
+    this.store.dispatch(setUser({ user: this.userName }));
     console.log(this.region);
   }
 }
