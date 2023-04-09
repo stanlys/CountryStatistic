@@ -14,6 +14,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { FlagGamesComponent } from './core/components/flag-games/flag-games.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { reducers, metaReducers } from './reducers';
     LayoutComponent,
     CheckGameComponent,
     FooterComponent,
+    FlagGamesComponent,
   ],
   imports: [
     BrowserModule,
