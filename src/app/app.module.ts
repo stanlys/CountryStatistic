@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckGameComponent } from './core/components/check-game/check-game.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,10 @@ import { MatRadioModule } from '@angular/material/radio';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
+    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
