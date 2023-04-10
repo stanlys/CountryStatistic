@@ -1,9 +1,0 @@
-<div>
-  <h3>Countries:</h3>
-  <mat-divider></mat-divider>
-  <div class="scroll">
-    <div *ngFor="let country of country$ | async" class="element">
-      <span>{{ country.flag }} </span> {{ country.name.common }}
-    </div>
-  </div>
-</div>
