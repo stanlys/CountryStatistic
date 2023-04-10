@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,9 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckGameComponent } from './core/components/check-game/check-game.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FlagGamesComponent } from './core/components/flag-games/flag-games.component';
+import { CountriesListComponent } from './core/components/countries-list/countries-list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,7 @@ import { FlagGamesComponent } from './core/components/flag-games/flag-games.comp
     CheckGameComponent,
     FooterComponent,
     FlagGamesComponent,
+    CountriesListComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,10 +42,14 @@ import { FlagGamesComponent } from './core/components/flag-games/flag-games.comp
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
-    StoreModule.forRoot({}, {}),
+    MatDividerModule,
+    MatInputModule,
+    MatFormFieldModule,
     StoreModule.forRoot(reducers, {
-      metaReducers
+      metaReducers,
     }),
+
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],
   bootstrap: [AppComponent],
