@@ -42,7 +42,7 @@ export const gameReducer = createReducer(
   on(changeGame, (state, action) => {
     const _countries = action.countries;
     const _region = action.region;
-    if (_region === 'Все страны') return { ...state, regions: _countries };
+    if (_region === 'Весь мир') return { ...state, regions: _countries };
     return {
       ...state,
       regions: _countries.filter((country) => country.region === _region),

@@ -29,6 +29,7 @@ export class CheckGameComponent implements OnInit {
   }
 
   currentGame() {
+    if (this.region === '' || this.userName === '') return;
     this.store.dispatch(setUser({ user: this.userName }));
     this.store.dispatch(
       changeGame({
@@ -37,6 +38,5 @@ export class CheckGameComponent implements OnInit {
       })
     );
     this.route.navigate(['flag-game']);
-    // console.log(this.region);
   }
 }
