@@ -1,0 +1,19 @@
+.scroll {
+  height: 75vh;
+  width: 75vw;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+}
+
+span {
+  font-size: 75px;
+}

@@ -20,6 +20,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FlagGamesComponent } from './core/components/flag-games/flag-games.component';
+import { CountriesListComponent } from './core/components/countries-list/countries-list.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FlagGamesComponent } from './core/components/flag-games/flag-games.comp
     CheckGameComponent,
     FooterComponent,
     FlagGamesComponent,
+    CountriesListComponent,
   ],
   imports: [
     BrowserModule,
