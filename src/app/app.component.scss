@@ -1,4 +1,6 @@
-@import "./../styles.scss";
+// @import "./../_colors.scss";
+
+@import "./../colors.scss";
 
 .wrapper {
   display: flex;
@@ -28,6 +30,4 @@
       gap: 2rem;
     }
   }
-
- 
 }
