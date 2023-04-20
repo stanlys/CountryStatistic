@@ -1,0 +1,17 @@
+<div *ngIf="country">
+  <h3>
+    {{ country.translations.rus.official }}
+  </h3>
+  <mat-divider></mat-divider>
+  <h4>
+    {{ country.translations.rus.common }}
+  </h4>
+  <ul>
+    <li>Столица : {{ country.capital }}</li>
+    <li>Регион : {{ country.region }}</li>
+    <li>Часть региона : {{ country.subregion }}</li>
+    <li>Площадь : {{ country.area }} км²</li>
+    <li>Граничит с : {{ countryNeighbors }}</li>
+    <li>Телефонный код : {{ countryPhones | slice : 0 : 60 }}</li>
+  </ul>
+</div>

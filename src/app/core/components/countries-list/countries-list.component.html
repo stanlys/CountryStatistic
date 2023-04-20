@@ -10,6 +10,11 @@
 <mat-divider></mat-divider>
 <div class="scroll">
   <div *ngFor="let country of country$ | async" class="element">
-    <span>{{ country.flag }} </span> {{ country.name.common }}
+    <span>
+      <a routerLink="{{ country.name.common }}">
+        <img src="https://flagsapi.com/{{ country.cca2 }}/flat/64.png" />
+      </a>
+    </span>
+    {{ country.translations.rus.common }}
   </div>
 </div>

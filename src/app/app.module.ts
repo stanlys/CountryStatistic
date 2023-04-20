@@ -21,6 +21,8 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FlagGamesComponent } from './core/components/flag-games/flag-games.component';
 import { CountriesListComponent } from './core/components/countries-list/countries-list.component';
+import { CountyDetailComponent } from './core/components/county-detail/county-detail.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { CountriesListComponent } from './core/components/countries-list/countri
     FooterComponent,
     FlagGamesComponent,
     CountriesListComponent,
+    CountyDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { CountriesListComponent } from './core/components/countries-list/countri
     MatDividerModule,
     MatInputModule,
     MatFormFieldModule,
+    LeafletModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
     }),
