@@ -48,8 +48,10 @@ export interface ICountry {
   subregion: string;
   languages: Object;
   latlng: Array<number>;
+  area?: string;
   landlocked: boolean;
   flag: string;
+  borders: Array<string>;
   translations: ITranslations;
   callingCodes: Array<string>;
 }
