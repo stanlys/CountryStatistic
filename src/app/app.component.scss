@@ -2,32 +2,40 @@
 
 @import "./../colors.scss";
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-top: 1rem;
+}
+
+nav {
+  padding-left: 20vw;
+  padding-right: 20vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+
+  h2 {
+    color: $custom-primary;
+    font-weight: 800;
+    font-size: 58px;
+    line-height: 68px;
+    font-style: normal;
+  }
+
+  .login_btns {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
 .wrapper {
   display: flex;
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-
-  nav {
-    padding-left: 20vw;
-    padding-right: 20vw;
-    height: 7vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
-
-    h2 {
-      color: $custom-primary;
-      font-weight: 800;
-      font-size: 58px;
-      line-height: 68px;
-      font-style: normal;
-    }
-
-    .login_btns {
-      display: flex;
-      gap: 2rem;
-    }
-  }
 }

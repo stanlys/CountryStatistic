@@ -1,7 +1,12 @@
-<div *ngIf="country">
-  <a routerLink="/country-list">
-    <button mat-button type="button" color="primary">< Назад</button>
-  </a>
+<div *ngIf="country" class="details">
+  <button
+    mat-button
+    type="button"
+    color="primary"
+    [routerLink]="['/country-list']"
+  >
+    < Назад
+  </button>
   <img [src]="countriesService.getImageUrl(country)" width="400px" />
   <h3>
     {{ country.translations.rus.official }}

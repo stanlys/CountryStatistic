@@ -72,6 +72,7 @@ body {
 body {
   margin: 0;
   font-family: "Roboto Condensed", sans-serif;
+  background: no-repeat 50% url("./assets/world/world.svg");
 }
 
 a {
@@ -81,15 +82,6 @@ a {
   &:hover {
     color: $custom-primary;
   }
-}
-
-main {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  background: no-repeat 50% url("./assets/world/world.svg");
 }
 
 .darkTheme {

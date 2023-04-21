@@ -1,11 +1,14 @@
-footer {
-  z-index: 2;
+div {
+  margin-top: 10rem;
   padding-left: 20vw;
   padding-right: 20vw;
   height: 3vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // justify-content: space-between;
+  // align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   .github {
     width: 1.5rem;
