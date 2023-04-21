@@ -1,0 +1,23 @@
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.btns {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.success {
+  font-size: x-large;
+  color: green;
+}
+
+.warning {
+  font-size: x-large;
+  color: red;
+}

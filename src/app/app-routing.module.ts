@@ -5,11 +5,12 @@ import { CheckGameComponent } from '@core/components/check-game/check-game.compo
 import { FlagGamesComponent } from '@core/components/flag-games/flag-games.component';
 import { CountriesListComponent } from '@core/components/countries-list/countries-list.component';
 import { CountyDetailComponent } from '@core/components/county-detail/county-detail.component';
+import { GameComponent } from '@core/components/game/game.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent },
   { path: 'check-game', component: CheckGameComponent },
-  { path: 'flag-game', component: FlagGamesComponent },
+  { path: 'game', component: GameComponent },
   { path: 'country-list', component: CountriesListComponent },
   { path: 'country-list/:id', component: CountyDetailComponent },
 ];

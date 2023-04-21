@@ -37,6 +37,6 @@ export class CheckGameComponent implements OnInit {
         countries: this.countiesServices.allCountries,
       })
     );
-    this.route.navigate(['flag-game']);
+    this.route.navigate(['game']);
   }
 }

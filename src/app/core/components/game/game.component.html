@@ -1,0 +1,47 @@
+<div *ngIf="!isShowResult; else result">
+  <h4>Угадай страну по флагу</h4>
+  <mat-divider></mat-divider>
+  <div class="game-area">
+    <img [src]="currentImg" />
+    <div>
+      <mat-radio-group [(ngModel)]="answer">
+        <mat-radio-button
+          color="primary"
+          *ngFor="let region of countries"
+          [value]="region"
+        >
+          {{ region }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  <div class="btns">
+    <button color="primary" mat-raised-button (click)="iThink()" class="">
+      Дальше >
+    </button>
+    <mat-divider></mat-divider>
+    <button color="error" mat-raised-button (click)="finishGame()">
+      Закончить
+    </button>
+  </div>
+</div>
+
+<ng-template #result>
+  <a routerLink="/">
+    <button color="primary" mat-raised-button (click)="iThink()" class="">
+      На главную
+    </button>
+  </a>
+  <h3>Поздравляем!</h3>
+  <h2>Правольно : {{ plus }}</h2>
+  <h2>Не правольно : {{ minus }}</h2>
+  <mat-divider></mat-divider>
+  <ul>
+    <li *ngFor="let answer of answerList">
+      {{ answer.answer }}
+      <span [ngClass]="{ success: !answer.isTrue, warning: !answer.isTrue }">
+        {{ answer.isTrue ? "✓" : "✘" }}
+      </span>
+    </li>
+  </ul>
+</ng-template>

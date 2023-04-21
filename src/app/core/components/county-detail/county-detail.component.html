@@ -2,7 +2,7 @@
   <a routerLink="/country-list">
     <button mat-button type="button" color="primary">< Назад</button>
   </a>
-  <img [src]="countriesService.getImageUrl(country.cca2)" width="400px" />
+  <img [src]="countriesService.getImageUrl(country)" width="400px" />
   <h3>
     {{ country.translations.rus.official }}
   </h3>

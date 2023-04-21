@@ -24,6 +24,7 @@ import { CountriesListComponent } from './core/components/countries-list/countri
 import { CountyDetailComponent } from './core/components/county-detail/county-detail.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './core/components/map/map.component';
+import { GameComponent } from './core/components/game/game.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MapComponent } from './core/components/map/map.component';
     CountriesListComponent,
     CountyDetailComponent,
     MapComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export default class CountryService {
     return result;
   }
 
-  getImageUrl(countryAbbr: string): string {
-    return `./../../../../assets/flags/${countryAbbr.toLocaleLowerCase()}.png`;
+  getImageUrl(country: ICountry): string {
+    return `./../../../../assets/flags/${country.cca2.toLocaleLowerCase()}.png`;
   }
 }
