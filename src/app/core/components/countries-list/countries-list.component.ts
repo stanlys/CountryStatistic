@@ -23,8 +23,11 @@ export class CountriesListComponent implements OnInit {
     this.allCountries = this.countiesServices.allCountries;
   }
 
+  // ngOnAfterInitView() {
+  //   console.log(this.countiesServices.getMainland());
+  // }
+
   updateFlagList() {
-    console.log(this.region);
     this.store.dispatch(
       changeGame({
         countries: this.countiesServices.allCountries,
@@ -32,5 +35,4 @@ export class CountriesListComponent implements OnInit {
       })
     );
   }
-
 }

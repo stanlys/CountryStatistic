@@ -47,7 +47,6 @@ export class MapComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.map.addLayer();
     const style = new Style({
       stroke: new Stroke({
         color: 'red',
@@ -67,7 +66,7 @@ export class MapComponent implements AfterViewInit {
     const e: olExtent.Extent = vectorLayerJSON.getExtent() as olExtent.Extent;
     const view = new View({
       center: [this.lng, this.lat],
-      zoom: 5,
+      zoom: 7,
       projection: 'EPSG:4326',
     });
     this.map.setView(view);

@@ -7,29 +7,32 @@
   >
     < Назад
   </button>
-  <img [src]="countriesService.getImageUrl(country)" width="400px" />
-  <h3>
-    {{ country.translations.rus.official }}
-  </h3>
-  <mat-divider></mat-divider>
-  <h4>
-    {{ country.translations.rus.common }}
-  </h4>
-  <ul>
-    <li>Столица : {{ country.capital }}</li>
-    <li>Регион : {{ country.region }}</li>
-    <li>Часть региона : {{ country.subregion }}</li>
-    <li>Площадь : {{ country.area }} км²</li>
-    <li>Граничит с : {{ countryNeighbors }}</li>
-    <li>Телефонный код : {{ countryPhones | slice : 0 : 60 }}</li>
-  </ul>
-
-  <div class="map-container">
-    <app-map
-      [lat]="country.latlng[0]"
-      [lng]="country.latlng[1]"
-      [zoom]="10"
-      [countryAbbr]="country.cca3 | lowercase"
-    ></app-map>
+  <div class="details_element">
+    <div class="map-container">
+      <app-map
+        [lat]="country.latlng[0]"
+        [lng]="country.latlng[1]"
+        [zoom]="10"
+        [countryAbbr]="country.cca3 | lowercase"
+      ></app-map>
+    </div>
+    <div>
+      <img [src]="countriesService.getImageUrl(country)" width="400px" />
+      <h3>
+        {{ country.translations.rus.official }}
+      </h3>
+      <mat-divider></mat-divider>
+      <h4>
+        {{ country.translations.rus.common }}
+      </h4>
+      <ul>
+        <li>Столица : {{ country.capital }}</li>
+        <li>Регион : {{ country.region }}</li>
+        <li>Часть региона : {{ country.subregion }}</li>
+        <li>Площадь : {{ country.area }} км²</li>
+        <li>Граничит с : {{ countryNeighbors }}</li>
+        <li>Телефонный код : {{ countryPhones | slice : 0 : 60 }}</li>
+      </ul>
+    </div>
   </div>
 </div>
