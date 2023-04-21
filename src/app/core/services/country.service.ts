@@ -27,4 +27,8 @@ export default class CountryService {
     }
     return result;
   }
+
+  getImageUrl(countryAbbr: string): string {
+    return `./../../../../assets/flags/${countryAbbr.toLocaleLowerCase()}.png`;
+  }
 }

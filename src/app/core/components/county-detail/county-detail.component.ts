@@ -16,7 +16,7 @@ export class CountyDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private countriesService: CountryService
+    public countriesService: CountryService
   ) {}
 
   ngOnInit(): void {

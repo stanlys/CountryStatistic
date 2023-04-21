@@ -12,7 +12,7 @@
   <div *ngFor="let country of country$ | async" class="element">
     <span>
       <a routerLink="{{ country.name.common }}">
-        <img src="https://flagsapi.com/{{ country.cca2 }}/flat/64.png" />
+        <img [src]="countiesServices.getImageUrl(country.cca2)" width="50px" />
       </a>
     </span>
     {{ country.translations.rus.common }}
