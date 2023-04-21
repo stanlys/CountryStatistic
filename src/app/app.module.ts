@@ -23,6 +23,7 @@ import { FlagGamesComponent } from './core/components/flag-games/flag-games.comp
 import { CountriesListComponent } from './core/components/countries-list/countries-list.component';
 import { CountyDetailComponent } from './core/components/county-detail/county-detail.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './core/components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     FlagGamesComponent,
     CountriesListComponent,
     CountyDetailComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

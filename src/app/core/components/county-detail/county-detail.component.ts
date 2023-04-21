@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ICountry } from '@core/interface/flag.interface';
 import CountryService from '@core/services/country.service';
-import { latLng, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-county-detail',

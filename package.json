@@ -23,7 +23,11 @@
     "@asymmetrik/ngx-leaflet": "^15.0.1",
     "@ngrx/store": "^15.4.0",
     "@ngrx/store-devtools": "^15.4.0",
+    "@types/ol": "^7.0.0",
+    "@types/proj4": "^2.5.2",
     "leaflet": "^1.9.3",
+    "ol": "^7.3.0",
+    "proj4": "^2.9.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

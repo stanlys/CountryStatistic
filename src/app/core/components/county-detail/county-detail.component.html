@@ -18,4 +18,13 @@
     <li>Граничит с : {{ countryNeighbors }}</li>
     <li>Телефонный код : {{ countryPhones | slice : 0 : 60 }}</li>
   </ul>
+
+  <div class="map-container">
+    <app-map
+      [lat]="country.latlng[0]"
+      [lng]="country.latlng[1]"
+      [zoom]="10"
+      [countryAbbr]="country.cca3 | lowercase"
+    ></app-map>
+  </div>
 </div>
