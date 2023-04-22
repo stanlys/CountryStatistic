@@ -25,7 +25,6 @@ export default class CountryService {
     for (const region of regionSet) {
       result.push(region as string);
     }
-    console.log(result);
     return result;
   }
 

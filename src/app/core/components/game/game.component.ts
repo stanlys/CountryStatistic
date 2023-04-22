@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IAnswer } from '@core/interface/answer.interface';
 import { ICountry } from '@core/interface/flag.interface';
 import CountryService from '@core/services/country.service';
@@ -9,6 +10,10 @@ import CountryService from '@core/services/country.service';
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent {
+  userName: string;
+
+  timeOfGame: number;
+
   allCountry: ICountry[];
   plus: number;
   minus: number;
@@ -16,17 +21,24 @@ export class GameComponent {
   currentImg = '';
   countries: Array<string> = [];
 
-  rigthAnswer = '';
+  private rigthAnswer = '';
   answer = '';
   answerList: Array<IAnswer> = [];
 
   isShowResult = false;
 
-  constructor(public countryService: CountryService) {
+  constructor(
+    public countryService: CountryService,
+    private router: ActivatedRoute
+  ) {
     this.allCountry = this.countryService.allCountries;
     this.plus = 0;
     this.minus = 0;
     this.getNextRandomCountry();
+    this.userName = this.router.snapshot.paramMap.get('userName') || 'Аноним';
+    this.timeOfGame =
+      Number(this.router.snapshot.paramMap.get('timer')) || 30000;
+    setTimeout(() => this.finishGame(), this.timeOfGame);
   }
 
   shuffle(array: Array<string>): Array<string> {

@@ -3,18 +3,32 @@
     <mat-label>Как тебя зовут? </mat-label>
     <input matInput placeholder="Степан" [(ngModel)]="userName" />
   </mat-form-field>
+  <h4>Время на одну игру</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Выбирай время</mat-label>
+    <mat-select [(ngModel)]="currentGameTime">
+      <mat-option *ngFor="let time of gameTimes" [value]="time.time">
+        {{ time.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
   <h2>Выбирай игру</h2>
   <mat-divider></mat-divider>
   <mat-radio-group [(ngModel)]="region">
     <mat-radio-button
       color="primary"
-      *ngFor="let region of countiesServices.getMainland()"
-      [value]="region"
+      *ngFor="let land of mainland"
+      [value]="land"
     >
-      {{ region }}
+      {{ land }}
     </mat-radio-button>
   </mat-radio-group>
-  <button mat-raised-button color="primary" (click)="currentGame()">
+  <button
+    mat-raised-button
+    [disabled]="userName.length <= 3 || region == ''"
+    color="primary"
+    (click)="currentGame()"
+  >
     Начать
   </button>
 </div>
